@@ -1,0 +1,249 @@
+Programming in Java
+Venkat Subramaniam
+venkats@agiledeveloper.com
+Twitter: @venkat_s
+                
+Java Fundamentals:
+-Programming paradigms in Java
+-creating a class
+ -constructor
+ -fields
+ -methods  
+ -private, public, protected, package friendly
+-creating objects
+-the JavaBean convention
+ -getters
+ -setters
+-static members
+-exception handling (more later)
+-throw, try, catch, finally
+-checked vs. unchecked exceptions
+-throws
+-Lab 1
+-Inheritance
+-Polymorphism
+-overriding methods
+-@Override
+-final members
+-final classes
+-interfaces
+-garbage collection
+-resources
+-finalize, bad idea - deprecated in Java 9
+-try-with-resources
+-inner classes
+-anonymous inner classes
+-annotations
+-packages
+-JAR files
+-Lab 2
+
+Java Collections:
+-arrays
+-Collections
+-Collection interface
+-List, Set, Map
+-don't use very old collections (Vector, Hashtable, Enumeration)
+-Caution with types, don't use Raw types
+-don't return null, instead return empty collection
+-iterating over a collection
+-external iterators
+-internal iterators
+-mutable vs. immutable
+-Lab
+               
+Programming with Generics:
+-Generics
+-TypeSafety and Generics
+-Raw Collections vs. Generic Collections
+-Naming Conventions
+ -Single letters
+ -E for elements
+ - T or other uppercase letters for other types
+-Type Erasure
+-Caution with static variables
+-LSP honored
+-Generic methods
+-Unbounded Type Parameters
+-Constraints on Generics
+-upper bound vs. lower bound
+-T extends ... vs. ? super ...
+-Multiple Bounds with &
+-Using Wildcard ? - unknown type
+ -can't write to such collection
+-Wildcard capture
+-Unchecked warnings
+-Restrictions
+	-Array of collection of generics not allowed
+	-Array of collection of wildcard is allowed, but unsafe
+	-no primitive types (yet)
+	-static fields can't be parametrized
+	-static methods can't have type parameters
+	-can't instantiate generic objects
+	-Can't inherit from parametric type, but ok to inherit from generic
+	-Can't inherit from two instantiations of same generic
+-Caution using raw types (assigning to raw type dangerous)
+-Converting to generics is not easy
+-Lab        
+
+Programming Concurrency:
+-Why threads?
+-Creating a thread, Runnable
+-threads, state, daemon threads
+-never create threads directly
+-Executors
+-submitting tasks
+-getting results back
+-newSingleThreadExecutor
+-using multiple threads
+-newFixedThreadPool
+-What's wrong with executors
+-ForkJoinPool
+-Java Memory Model
+-shared mutability and race conditions
+-Visibility
+-reordering and compiler optimizations
+-how to cross the memory barrier
+  -volatile
+  -synchronized
+  -sleep
+  -join
+  -wait
+  -...
+-atomicity
+-Atomic types
+-power and limitations
+-Parallel vs. asynchronous
+-CompletableFuture
+ -JavaScript promises
+-Creating async task
+-thread of execution
+-receiving results
+-transforming data
+-Lab
+
+Starting with Lambda Expressions:
+-What are lambda expressions?
+-Parts of a function
+-Why change the way?
+	-we can express our intent more directly - no ceremony
+	-opens doors for functional style of programming which is better in so many ways as we will see
+-paradigm shift: state transformation instead of mutation
+-benefits
+-adapting to functional style
+-refactoring to functional style—contains
+-declarative nature
+-refactoring iteration
+-What do lambdas look like?
+-as a type
+-at call site
+-Lab
+
+Thinking in Functional Style:
+-imperative style
+-functional/declarative style
+-Imperative vs declarative
+  -specify steps vs directive
+  - how vs what
+  - mutates vs immutable
+  - side-effect vs. pure
+  - accept data/object vs. functions too
+  - hard to compose vs easy
+  - mutated data vs. transformed data
+-how does it change what we do
+-starting a thread
+-reading a file—lines
+-listing directories—Stream.of
+-iterating string
+-Lab 1
+-discovering declarative style
+-programming with immutability
+-referential transparency
+-evolving code
+-object composition vs. functional composition
+-higher order function
+-functional interfaces
+-static methods
+-default methods
+-functional interfaces in java.util.function
+-receiving a lambda
+-transforming to a list
+-joining
+-Lab 2
+-lexical scoping
+-effectively final
+-don't break immutability
+-Exploring comparators
+-sort on name
+-sort on age
+-using comparing
+-reversing the order
+-combining comparisons
+-Lab 3
+
+Using Method References:
+-more concise, expressive																													
+-from lambdas to method references
+-routing as an argument
+-routing as an argument to static method: lowestOneBit
+-routing as a target
+-routing as an argument using this
+-routing as a target and calling an instance method
+-refs and multiple parameters
+-dealing with ambiguity
+-lab
+
+Working with Collections:
+-common functional interfaces
+-iterating a list
+-transforming a list
+-filtering values
+-filter, transform, print
+-reduce operation
+-reducing further
+-reduce behavior
+ -only one element
+ -empty list
+-optional
+-specialized reduces
+ -sum, min, max
+-exploring Optional
+-Lab 1
+-Java 9: takeWhile and dropWhile
+-Java 9: IntStream.iterate
+-flatMap
+-Stream
+-What is it?
+	-abstraction
+	-non mutating
+	-a view of how data is transformed
+	-a pipeline
+-How do we use them?
+	-Raise from concrete to stream
+	-Ride the stream
+	-Compose operations
+	-Land back on a concrete
+-Characteristics: sized, ordered, distinct, sorted, parallel
+	-depends on source
+	-depends on operation
+-raise, operate, and land
+-the wrong way - list of all adult names in uppercase
+-the right way - specialized reduce called collect
+-collect
+  -collect to list
+  -collect to set
+  -collect to map
+-Lab 2
+- groupingBy
+- groupingBy and mapping
+- frequency counting
+- find first
+-Lab 3
+
+Function Composition:
+-statement vs expressions
+-composing functions
+-lazy evaluations
+-infinite streams
+-parallel streams
+-Lab

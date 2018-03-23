@@ -1,0 +1,8 @@
+This repository contains all the code examples and lab solutions written 
+during the "Programming with Java" course offered in Redwood City, VA
+during March/April 2018 for developers at Shopkick.
+
+Thank you
+
+Venkat Subramaniam
+venkats@agiledeveloper.com
